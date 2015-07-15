@@ -11,13 +11,6 @@ RUN apt-get update \
 		nodejs \
 		ca-certificates \
 	&& rm -rf /var/lib/apt/lists/* \
-	&& gem install bundle dashing \
-	&& bundle
-
-
-ONBUILD COPY . /opt/dashboard
-ONBUILD WORKDIR /opt/dashboard
-ONBUILD RUN bundle
-
+	&& gem install bundle dashing
 
 EXPOSE 3030
